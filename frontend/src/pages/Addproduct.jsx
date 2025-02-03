@@ -29,6 +29,13 @@ const Addproduct = () => {
 					},
 				})
 				.then((response) => {
+					if(response.status == 400){return};
+
+					if(response.data.length == 1){
+						setData({ ...data, category: response.data[0].name });
+					}
+					// console.log(response.data.length,"REEEE");
+					// console.log(response.data[0].name,"REEEE");
 					setCategories(response.data);
 				});
 		};

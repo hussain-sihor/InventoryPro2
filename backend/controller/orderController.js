@@ -76,13 +76,15 @@ const updateOrder = asyncHandler(async (req,res)=>{
 
 getStatusOrders = asyncHandler(async(req,res)=>{
 	const {status} = req.body;
+	const userdata = req.user;
+
 
 	if (!status) {
 		res.status(400).json({message:"All fields required"});
 		return;
 	}
 
-	const allOrders = await Order.find({status:status});
+	const allOrders = await Order.find({status:status,author:userdata.id});
 	res.status(200).json(allOrders)
 })
 

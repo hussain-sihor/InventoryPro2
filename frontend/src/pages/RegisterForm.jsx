@@ -54,7 +54,7 @@ const LoginForm = () => {
 								}}
 								type="text"
 								placeholder="Enter name"
-								className=" p-3 w-[70%]  bg-white rounded-lg border-2 border-black"
+								className=" p-3 w-[70%]  bg-white rounded-lg border-[3px] border-gray-900 shadow-sm shadow-optional placeholder-gray-900"
 							></input>
 							<FaUser className="text-xl text-white" />
 						</div>
@@ -70,7 +70,7 @@ const LoginForm = () => {
 								}}
 								type="email"
 								placeholder="Enter email"
-								className=" p-3 w-[70%]  bg-white rounded-lg border-2 border-black"
+								className=" p-3 w-[70%]  bg-white rounded-lg border-[3px] border-gray-900 shadow-sm shadow-optional placeholder-gray-900"
 							></input>
 							<MdEmail className="text-xl text-white" />
 						</div>
@@ -87,7 +87,7 @@ const LoginForm = () => {
 								}}
 								type="phone"
 								placeholder="Enter phone number"
-								className=" p-3 w-[70%]  bg-white rounded-lg border-2 border-black"
+								className=" p-3 w-[70%]  bg-white rounded-lg border-[3px] border-gray-900 shadow-sm shadow-optional placeholder-gray-900"
 							></input>
 							<FaPhoneAlt className="text-xl text-white" />
 						</div>
@@ -103,7 +103,7 @@ const LoginForm = () => {
 								}}
 								type="text"
 								placeholder="Enter position"
-								className=" p-3 w-[70%]  bg-white rounded-lg border-2 border-black"
+								className=" p-3 w-[70%]  bg-white rounded-lg border-[3px] border-gray-900 shadow-sm shadow-optional placeholder-gray-900"
 							></input>
 							<RiGitRepositoryFill className="text-xl text-white" />
 						</div>
@@ -119,7 +119,7 @@ const LoginForm = () => {
 								}}
 								type="password"
 								placeholder="Enter password"
-								className=" p-3 w-[70%]  bg-white rounded-lg border-2 border-black"
+								className=" p-3 w-[70%]  bg-white rounded-lg border-[3px] border-gray-900 shadow-sm shadow-optional placeholder-gray-900"
 							></input>
 							<RiLockPasswordFill className="text-xl text-white" />
 						</div>

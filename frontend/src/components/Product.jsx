@@ -8,18 +8,13 @@ import {
 import { MdDelete } from "react-icons/md";
 import axiosInstance from "@/lib/axiosInstance";
 
-const Product = ({ data, count }) => {
+const Product = ({ data, count ,handleDelete}) => {
 	// console.log(data);
 	let photoUrl = data.photo;
 	let productValue = data.price * data.quantity;
 	let status = data.status;
   
-	const handleDelete = async(id) =>{
-	   await axiosInstance.delete(`/products/deleteproduct/${id}`).then((response)=>{
-			window.location.reload(false)
-			console.log(response);
-		 })
-	}
+
 	return (
 		<div
 			className="w-full h-[65px] grid
@@ -54,7 +49,7 @@ const Product = ({ data, count }) => {
 			{/* Price  */}
 			<div className="grid col-span-1 justify-center items-center  h-full w-full">
 				<h1 className="text-md font-medium w-full  text-white">
-					{data.price} $
+				₹ {data.price} 
 				</h1>
 			</div>
 
@@ -100,7 +95,7 @@ const Product = ({ data, count }) => {
 			{/* Value  */}
 			<div className="grid col-span-1 h-full ">
 				<div className=" flex justify-end items-center gap-8 w-full h-full pr-3">
-					<h1 className="text-md font-medium text-white">{productValue} $</h1>
+					<h1 className="text-md font-medium text-white">₹ {productValue} </h1>
 
 					{/* Three dots  */}
 					<div className="text-xl cursor-pointer">

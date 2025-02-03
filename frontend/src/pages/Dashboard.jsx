@@ -204,17 +204,17 @@ const Dashboard = () => {
 			</div>
 
 {/* FIRST ROW */}
-			<div className="w-full flex justify-between items-center h-[400px] pt-9 ">
+			<div className="w-full flex justify-between items-center h-[400px] pt-9 gap-10">
 				<div className="w-[50%] h-full  flex justify-start items-center relative">
 					<div className="text-lg font-bold text-white  absolute left-[2%] top-2">
 						Categories
 					</div>
-					<div className="w-[80%] h-full border-tertiary border-[2px] border-dashed rounded-md ">
+					<div className="w-[100%] h-full border-tertiary border-[2px] border-dashed rounded-md ">
 						<CategoryChart data={pieData} />
 					</div>
 				</div>
 
-				<div className="w-[60%] h-full flex flex-col justify-center  border-tertiary border-[2px] border-dashed rounded-md relative">
+				<div className="w-[50%] h-full flex flex-col justify-center  border-tertiary border-[2px] border-dashed rounded-md relative">
 				<div className="text-lg font-bold text-white absolute left-2 top-2">
 						Products
 					</div>
@@ -240,9 +240,12 @@ const Dashboard = () => {
 			</div>
 
 {/* SECOND ROW */}
-			<div className="w-full flex justify-around items-center h-[400px] pt-7 ">
+			<div className="w-full flex justify-start items-center h-[400px] pt-7 gap-10 ">
 
 				<div className="w-[50%] h-full  flex justify-center items-start relative border-[2px] rounded-md border-dashed border-tertiary">
+					<Reminders />
+				</div>
+				<div className="w-[50%] h-full  flex justify-center items-start relative border-[2px] rounded-md border-dashed border-tertiary opacity-0">
 					<Reminders />
 				</div>
 			</div>

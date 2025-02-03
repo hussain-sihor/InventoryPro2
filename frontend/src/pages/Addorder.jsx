@@ -82,7 +82,7 @@ const Addorder = () => {
 		}
     
 		const token = localStorage.getItem("token");
-try{
+ try{
 	await axiosInstance.post("/orders/addorder", {
 		orderNumber:data.orderNumber,
 		customerId: data.customerId,
@@ -103,6 +103,7 @@ try{
 	})
 	.then((response) => {
 	toast.success("Order created successfully",toastOptions);
+	navigate("/orders");
 				
 	})
 }catch(err){
@@ -325,16 +326,16 @@ try{
 							</div>
 						</div>
 
-						<div className="flex justify-start items-start w-full border-[2px] border-tertiary border-dashed flex-col text-white p-4 rounded-xl h-[350px]">
+						<div className="flex w-full border-[2px] border-tertiary border-dashed text-white p-4 rounded-xl h-[350px] bg-secondary">
 
-							<div className="flex w-full flex-col gap-3 h-full justify-center items-center ">
+							<div className="flex w-full flex-col gap-3 h-full justify-start items-center">
 								<input
 									type="text"
-									className="border-[1px] w-full rounded-md pt-2 pb-2 pl-3 bg-black text-white border-gray-300 "
+									className="border-[1px] w-full rounded-md pt-3 pb-3 pl-3 bg-black text-white border-gray-300 "
 									placeholder="Filter orders..."
 								/>
 
-								<div className="w-[95%] gap-7 flex flex-col  overflow-y-scroll scrollbar-hidden mt-4  pt-2 pb-2">
+								<div className="w-[95%]  gap-7 flex flex-col  overflow-y-scroll scrollbar-hidden pt-2 pb-2  ">
 									{products.map((item) => (
 										<AddOrderList item={item} handle={saveChange} key={item.createdAt} />
 									))}

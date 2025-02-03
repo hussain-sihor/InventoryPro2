@@ -11,7 +11,6 @@ const Order = ({ data }) => {
   const navigate = useNavigate();
 	const items = data.items.length
 	
-	console.log(items)
 	return (
 		<div
 			className="w-full h-[65px] grid

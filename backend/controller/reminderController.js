@@ -4,8 +4,7 @@ const Reminder = require("../model/reminder");
 
 
 const addReminder= asyncHandler(async (req, res) => {
-	const {task} = req.body;
-
+	const {task,author} = req.body;
 	if (!task ) {
     res.status(400).json({message:"All fields required"});
 	}
@@ -18,7 +17,7 @@ const addReminder= asyncHandler(async (req, res) => {
  
    // Create New Reminder
    const newReminder = await Reminder.create({
-		task,
+		task,author
    });
 
    if (newReminder) {
@@ -29,8 +28,7 @@ const addReminder= asyncHandler(async (req, res) => {
 
 const getReminders = asyncHandler(async(req,res)=>{
 	const userdata = req.user;
-
-	const allReminders = await Reminder.find({author:userdata._id})
+	const allReminders = await Reminder.find({author:userdata.id})
 	res.status(200).json(allReminders)
 
 })

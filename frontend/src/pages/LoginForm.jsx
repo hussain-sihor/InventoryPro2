@@ -29,7 +29,7 @@ const LoginForm = () => {
 		  if(res.status == 200){
 				localStorage.setItem("token",res.data.token);
 		   toast.success("Sign In Successfully", toastOptions);
-		  navigate('/');
+		    navigate('/dashboard');
 		  }
 		  }
 			catch(err){
@@ -59,7 +59,7 @@ const LoginForm = () => {
 							  onChange={(e)=>{setEmail(e.target.value)}}
 								type="email"
 								placeholder="Enter email"
-								className=" p-3 w-[70%]  bg-white rounded-lg border-2 border-black"
+								className=" p-3 w-[70%]  bg-white rounded-lg border-[3px] border-gray-900 shadow-sm shadow-optional placeholder-gray-900"
 							></input>
 							<MdEmail className="text-xl text-white" />
 						</div>
@@ -75,7 +75,7 @@ const LoginForm = () => {
 							onChange={(e)=>{setPassword(e.target.value)}}
 								type="password"
 								placeholder="Enter password"
-								className="p-3 w-[70%]  bg-white rounded-lg border-2 border-black"
+								className="p-3 w-[70%]  bg-white rounded-lg border-[3px] border-gray-900 shadow-sm shadow-optional placeholder-gray-900"
 							></input>
 							<RiLockPasswordFill className="text-xl text-white" />
 						</div>

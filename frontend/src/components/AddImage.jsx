@@ -26,7 +26,7 @@ const AddImage = ({handleImage}) => {
   return (
     <div className='flex justify-between h-[150px] items-center  '>
 
-  {! str ?<button className='pl-2 pr-2 pt-1 pb-1 border-[1px] border-white font-semibold text-white bg-tertiary w-[20%] h-[25%] ml-[5%] rounded-xl hover:bg-optional' onClick={()=>{
+  {! str ?<button className='pl-2 pr-2 pt-1 pb-1 border-[1px] border-white font-semibold text-white bg-secondary w-[20%] h-[25%] ml-[5%] rounded-xl hover:bg-optional' onClick={()=>{
      widgetRef.current.open()
    }}>
     Upload Photo

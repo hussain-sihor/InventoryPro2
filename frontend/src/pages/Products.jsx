@@ -29,6 +29,7 @@ const Products = () => {
 	const [showLow, setShowLow] = useState(false);
 	const [showMidium, setShowMidium] = useState(false);
 	const [showOut, setShowOut] = useState(false);
+	const [flag, setFlag] = useState(false);
   
 	const checkProductChange = (data) => {
 
@@ -63,6 +64,18 @@ const Products = () => {
 			});
 	};
 
+	const handleDelete = async(id) =>{
+			const token = localStorage.getItem("token");
+			 await axiosInstance.delete(`/products/deleteproduct/${id}`,{
+				headers:{
+					Authorization:`Bearer ${token}`
+				}
+			 }).then((response)=>{
+				setFlag(!flag);
+				console.log(response);
+			 })
+		}
+
 	useEffect(() => {
 		const handelRequest = async()=>{
         
@@ -89,7 +102,7 @@ const Products = () => {
 		handelRequest();
 			
 		
-	}, []);
+	}, [flag]);
 
 	return (
 		<div className="w-full h-[90.3vh] bg-primary">
@@ -227,7 +240,6 @@ const Products = () => {
 								<DropdownMenuCheckboxItem
 									onCheckedChange={() => {
 										checkCategoryChange(item.name);
-										checked(item.name);
 									}}
 									key={item._id}
 								>
@@ -266,7 +278,7 @@ const Products = () => {
 
 				<div className="h-auto w-full overflow-y-scroll border-[1px] border-white scrollbar-hidden">
 					{products.map((item) => (
-						<Product data={item} count={count++} key={item._id}/>
+						<Product data={item} count={count++} key={item._id} handleDelete={handleDelete}/>
 					))}
 				</div>
 			</div>
