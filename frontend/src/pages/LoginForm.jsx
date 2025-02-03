@@ -10,8 +10,8 @@ import axiosInstance from "@/lib/axiosInstance";
 const LoginForm = () => {
   const navigate = useNavigate();
 
-	const [email,setEmail] = useState("");
-	const [password,setPassword] = useState("");
+	const [email,setEmail] = useState("temp@gmail.com");
+	const [password,setPassword] = useState("12345");
 
 	const toastOptions = {
 		position: "bottom-right",
