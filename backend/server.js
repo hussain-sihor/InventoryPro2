@@ -11,8 +11,8 @@ const authMiddleware = require("./middleware/authMiddleware")
 const app = express();
 connectDB()
 
-
-
+// http://localhost:5173
+// https://inventoryproo.vercel.app
 const corsOptions = { origin: "https://inventoryproo.vercel.app",methods:"GET,POST,PUT,PATCH,POST,DELETE", credentials: true }
 
 app.use(cors(corsOptions));

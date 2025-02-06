@@ -10,7 +10,7 @@ const addProduct = asyncHandler(async (req, res) => {
 
 
  	// Check Product Exsist
-   const product = await Product.findOne({ name });
+   const product = await Product.findOne({ name,author });
    if (product) {
     res.status(400).json({message:"Product already exsists"});
     return
