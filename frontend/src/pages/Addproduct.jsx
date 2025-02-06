@@ -31,9 +31,9 @@ const Addproduct = () => {
 				.then((response) => {
 					if(response.status == 400){return};
 
-					if(response.data.length == 1){
-						setData({ ...data, category: response.data[0].name });
-					}
+					
+					setData({ ...data, category: response.data[0].name });
+					
 					// console.log(response.data.length,"REEEE");
 					// console.log(response.data[0].name,"REEEE");
 					setCategories(response.data);
@@ -84,15 +84,15 @@ const Addproduct = () => {
 
 	const handleSubmit = async(event) => {
 		event.preventDefault();
-		// console.log(data);
+		console.log(data);
     
-		if(data.quantity == 0){
+		if(parseInt(data.quantity) == 0){
 			data.status = "Out of Stock";
 		}
-		else if(data.quantity < data.level){
+		else if(parseInt(data.quantity) < parseInt(data.level)){
 			data.status = "Low";
 		}
-		else if(data.quantity < (data.level * 2) ){
+		else if(parseInt(data.quantity) < parseInt((data.level) * 2) ){
 			data.status = "Mid";
 		}
 		else{
